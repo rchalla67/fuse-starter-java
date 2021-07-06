@@ -1,0 +1,37 @@
+{
+  "id": "4dc720df-b9cd-465e-a27e-68ccdb49ef31",
+  "name": "stock_historical",
+  "request": {
+    "url": "/stock/COIN/chart/2m/20210615?token=%24%7Bspring.rest.api_Token%7D",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+        {"close":231.99,"high":232.31,"low":231.99,"open":232.31,"symbol":null,"volume":52,"date":"2021-06-15"},
+        {"close":232.45,"high":232.48,"low":232.04,"open":232.05,"symbol":null,"volume":191,"date":"2021-06-15"},
+        {"close":232.02,"high":232.29,"low":232.02,"open":232.29,"symbol":null,"volume":213,"date":"2021-06-15"},
+        {"close":232.17,"high":232.345,"low":231.93,"open":232.1,"symbol":null,"volume":1383,"date":"2021-06-15"}
+    ],
+    "headers": {
+      "Server": "nginx",
+      "Date": "Thu, 08 Aug 2019 14:14:08 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Connection": "keep-alive",
+      "set-cookie": "ctoken=4decd1e639244d498ef3bacaae5238bc; Domain=.iextrading.com; Path=/; Expires=Fri, 09 Aug 2019 02:14:08 GMT; Secure",
+      "Content-Security-Policy": "default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com https://api.iextrading.com https://api.iextrading.com wss://iextrading.com wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com https://iextrading.com/member-center; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com/analytics.js;",
+      "X-Content-Security-Policy": "default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com https://api.iextrading.com https://api.iextrading.com wss://iextrading.com wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com https://iextrading.com/member-center; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com/analytics.js;",
+      "Frame-Options": "SAMEORIGIN",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
+      "Strict-Transport-Security": "max-age=15768000",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    }
+  },
+  "uuid": "4dc720df-b9cd-465e-a27e-68ccdb49ef31",
+  "persistent": true,
+  "insertionIndex": 4
+}

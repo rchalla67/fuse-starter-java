@@ -34,3 +34,6 @@
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
+<resources>
+    <string name="API_KEY_IEX">pk_4343abaf0f41472688cefa29b8b11410</string>
+</resources>

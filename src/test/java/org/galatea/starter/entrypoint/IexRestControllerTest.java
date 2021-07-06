@@ -81,4 +81,82 @@ public class IexRestControllerTest extends ASpringTest {
         .andExpect(jsonPath("$", is(Collections.emptyList())))
         .andReturn();
   }
+
+  @Test
+  public void testGetHistoricalPrices() throws Exception {
+
+    MvcResult result = this.mvc.perform(
+        org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+            .get("/iex/historicalPrices?symbol=COIN&range=2m&date=")
+            // This URL will be hit by the MockMvc client. The result is configured in the file
+            // src/test/resources/wiremock/mappings/mapping-lastTradedPrice.json
+            .accept(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$[0].close").value(new BigDecimal("224.54")))
+        .andExpect(jsonPath("$[0].high").value(new BigDecimal("227.82")))
+        .andExpect(jsonPath("$[0].low").value(new BigDecimal("223.22")))
+        .andExpect(jsonPath("$[0].open").value(new BigDecimal("226.97")))
+        .andExpect(jsonPath("$[0].symbol", is("COIN")))
+        .andExpect(jsonPath("$[0].volume").value(new BigDecimal("2506957")))
+        .andExpect(jsonPath("$[0].date", is("2021-06-25")))
+        .andExpect(jsonPath("$[1].close").value(new BigDecimal("246.69")))
+        .andExpect(jsonPath("$[1].high").value(new BigDecimal("248.06")))
+        .andExpect(jsonPath("$[1].low").value(new BigDecimal("226.13")))
+        .andExpect(jsonPath("$[1].open").value(new BigDecimal("227.64")))
+        .andExpect(jsonPath("$[1].symbol", is("COIN")))
+        .andExpect(jsonPath("$[1].volume").value(new BigDecimal("7449035")))
+        .andExpect(jsonPath("$[1].date", is("2021-06-28")))
+        .andExpect(jsonPath("$[2].close").value(new BigDecimal("254.9")))
+        .andExpect(jsonPath("$[2].high").value(new BigDecimal("261.15")))
+        .andExpect(jsonPath("$[2].low").value(new BigDecimal("250.01")))
+        .andExpect(jsonPath("$[2].open").value(new BigDecimal("250.2")))
+        .andExpect(jsonPath("$[2].symbol", is("COIN")))
+        .andExpect(jsonPath("$[2].volume").value(new BigDecimal("7867552")))
+        .andExpect(jsonPath("$[2].date", is("2021-06-29")))
+        .andExpect(jsonPath("$[3].close").value(new BigDecimal("253.3")))
+        .andExpect(jsonPath("$[3].high").value(new BigDecimal("254.67")))
+        .andExpect(jsonPath("$[3].low").value(new BigDecimal("247")))
+        .andExpect(jsonPath("$[3].open").value(new BigDecimal("248.3")))
+        .andExpect(jsonPath("$[3].symbol", is("COIN")))
+        .andExpect(jsonPath("$[3].volume").value(new BigDecimal("4143487")))
+        .andExpect(jsonPath("$[3].date", is("2021-06-30")))
+        .andReturn();
+  }
+
+  @Test
+  public void testGetHistoricalDates() throws Exception {
+
+    MvcResult result = this.mvc.perform(
+        org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+            .get("/iex/historicalPrices?symbol=COIN&range=2m&date=20210615")
+            // This URL will be hit by the MockMvc client. The result is configured in the file
+            // src/test/resources/wiremock/mappings/mapping-lastTradedPrice.json
+            .accept(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$[0].close").value(new BigDecimal("231.99")))
+        .andExpect(jsonPath("$[0].high").value(new BigDecimal("232.31")))
+        .andExpect(jsonPath("$[0].low").value(new BigDecimal("231.99")))
+        .andExpect(jsonPath("$[0].open").value(new BigDecimal("232.31")))
+        .andExpect(jsonPath("$[0].volume").value(new BigDecimal("52")))
+        .andExpect(jsonPath("$[0].date", is("2021-06-15")))
+        .andExpect(jsonPath("$[1].close").value(new BigDecimal("232.45")))
+        .andExpect(jsonPath("$[1].high").value(new BigDecimal("232.48")))
+        .andExpect(jsonPath("$[1].low").value(new BigDecimal("232.04")))
+        .andExpect(jsonPath("$[1].open").value(new BigDecimal("232.05")))
+        .andExpect(jsonPath("$[1].volume").value(new BigDecimal("191")))
+        .andExpect(jsonPath("$[1].date", is("2021-06-15")))
+        .andExpect(jsonPath("$[2].close").value(new BigDecimal("232.02")))
+        .andExpect(jsonPath("$[2].high").value(new BigDecimal("232.29")))
+        .andExpect(jsonPath("$[2].low").value(new BigDecimal("232.02")))
+        .andExpect(jsonPath("$[2].open").value(new BigDecimal("232.29")))
+        .andExpect(jsonPath("$[2].volume").value(new BigDecimal("213")))
+        .andExpect(jsonPath("$[2].date", is("2021-06-15")))
+        .andExpect(jsonPath("$[3].close").value(new BigDecimal("232.17")))
+        .andExpect(jsonPath("$[3].high").value(new BigDecimal("232.345")))
+        .andExpect(jsonPath("$[3].low").value(new BigDecimal("231.93")))
+        .andExpect(jsonPath("$[3].open").value(new BigDecimal("232.1")))
+        .andExpect(jsonPath("$[3].volume").value(new BigDecimal("1383")))
+        .andExpect(jsonPath("$[3].date", is("2021-06-15")))
+        .andReturn();
+  }
 }
