@@ -51,14 +51,6 @@ public class IexRestController {
     return iexService.getLastTradedPriceForSymbols(symbols);
   }
 
-  /**
-   * Get Historical Prices
-   *
-   * @param symbol
-   * @param range
-   * @param date
-   * @return
-   */
   @GetMapping(value = "${mvc.iex.getHistoricalPricesPath}", produces = {
       MediaType.APPLICATION_JSON_VALUE})
   public List<IexHistoricalPrices> getHistoricalPrices(
