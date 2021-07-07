@@ -60,7 +60,7 @@ spring:
    rest:
       iexBasePath: https://api.iextrading.com/1.0
       iexCloudApiBasePath: https://cloud.iexapis.com/stable
-
+      APITOKEN: ${IEXAPITOKEN}
 # set debug to get spring to log the classpath (and other things) on startup
 debug: true
 
