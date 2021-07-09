@@ -49,11 +49,12 @@ public class IexService {
   }
 
   /**
+   * Get the historical prices of a specified Symbol with time series query parameters
    *
-   * @param symbol
-   * @param range
-   * @param date
-   * @return
+   * @param symbol specified symbol to get prices for
+   * @param range time span for which to get the prices Ex). 1m, 1y, previous
+   * @param date specify a single date for which intra-day prices and volumes are returned
+   * @return a list of historical price objects
    */
 
   public List<IexHistoricalPrices> getHistoricalPrices(final String symbol, final String range, final String date) {

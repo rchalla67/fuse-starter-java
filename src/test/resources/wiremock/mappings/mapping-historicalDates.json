@@ -2,7 +2,7 @@
   "id": "4dc720df-b9cd-465e-a27e-68ccdb49ef31",
   "name": "stock_historical",
   "request": {
-    "url": "/stock/COIN/chart/2m/20210615?token=%24%7Bspring.rest.api_Token%7D",
+    "url": "/stock/COIN/chart/2m/20210615?token=%24%7Bspring.rest.APITOKEN%7D",
     "method": "GET"
   },
   "response": {

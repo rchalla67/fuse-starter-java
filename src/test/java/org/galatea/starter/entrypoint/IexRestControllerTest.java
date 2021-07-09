@@ -88,8 +88,6 @@ public class IexRestControllerTest extends ASpringTest {
     MvcResult result = this.mvc.perform(
         org.springframework.test.web.servlet.request.MockMvcRequestBuilders
             .get("/iex/historicalPrices?symbol=COIN&range=2m&date=")
-            // This URL will be hit by the MockMvc client. The result is configured in the file
-            // src/test/resources/wiremock/mappings/mapping-lastTradedPrice.json
             .accept(MediaType.APPLICATION_JSON_VALUE))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$[0].close").value(new BigDecimal("224.54")))
@@ -159,4 +157,16 @@ public class IexRestControllerTest extends ASpringTest {
         .andExpect(jsonPath("$[3].date", is("2021-06-15")))
         .andReturn();
   }
+
+  @Test
+  public void testGetHistoricalNoSymbol() throws Exception {
+
+    MvcResult result = this.mvc.perform(
+        org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+            .get("/iex/historicalPrices")
+            .accept(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(status().isBadRequest())
+        .andReturn();
+  }
+
 }
