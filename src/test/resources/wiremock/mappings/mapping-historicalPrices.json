@@ -1,0 +1,38 @@
+{
+  "id": "4dc720df-b9cd-465e-a27e-68ccdb49ef31",
+  "name": "stock_historical_prices",
+  "request": {
+    "url": "/stock/COIN/chart/2m/?token=%24%7Bspring.rest.APITOKEN%7D",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {"close":224.54,"high":227.82,"low":223.22,"open":226.97,"symbol":"COIN","volume":2506957,"date":"2021-06-25"},
+      {"close":246.69,"high":248.06,"low":226.13,"open":227.64,"symbol":"COIN","volume":7449035,"date":"2021-06-28"},
+      {"close":254.9,"high":261.15,"low":250.01,"open":250.2,"symbol":"COIN","volume":7867552,"date":"2021-06-29"},
+      {"close":253.3,"high":254.67,"low":247,"open":248.3,"symbol":"COIN","volume":4143487,"date":"2021-06-30"},
+      {"close":241.44,"high":255.15,"low":240.53,"open":251.09,"symbol":"COIN","volume":3627357,"date":"2021-07-01"}
+    ],
+    "headers": {
+      "Server": "nginx",
+      "Date": "Thu, 08 Aug 2019 14:14:08 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Connection": "keep-alive",
+      "set-cookie": "ctoken=4decd1e639244d498ef3bacaae5238bc; Domain=.iextrading.com; Path=/; Expires=Fri, 09 Aug 2019 02:14:08 GMT; Secure",
+      "Content-Security-Policy": "default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com https://api.iextrading.com https://api.iextrading.com wss://iextrading.com wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com https://iextrading.com/member-center; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com/analytics.js;",
+      "X-Content-Security-Policy": "default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com https://api.iextrading.com https://api.iextrading.com wss://iextrading.com wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com https://iextrading.com/member-center; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com/analytics.js;",
+      "Frame-Options": "SAMEORIGIN",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
+      "Strict-Transport-Security": "max-age=15768000",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    }
+  },
+  "uuid": "4dc720df-b9cd-465e-a27e-68ccdb49ef31",
+  "persistent": true,
+  "insertionIndex": 4
+}
